@@ -29,8 +29,8 @@ Chaque story a un responsable et un relecteur différent (Definition of Done) ; 
 | R0 | **Coordination** · US-02 Story map et backlog | US-01 Analyse de la demande | US-03 Tableau Kanban GitHub | US-04 Plan de release |
 | R1 | US-40 Comptes admin + MFA · US-30 Sauvegarde PBS · US-70 Dossier de preuves | US-10 Atelier 1 · US-11 Atelier 2 | US-20 Lab Proxmox · US-21 Migration du WMS | **Coordination** · US-31 Test de restauration |
 | R2 | US-41 Segmentation + OPNsense · US-43 Droits des partages | US-12 Atelier 3 · US-13 Atelier 4 · US-45 MFA messagerie | **Coordination** · US-42 Réseau scanners · US-33 Autres sauvegardes | US-24 Portail en DMZ · US-72 Données de coûts |
-| R3 | US-32 Copie externalisée · US-73 Scénario sur site | **Coordination** · US-14 Atelier 5 · US-60 Simulation d'incident · US-51 Journalisation | US-22 Haute disponibilité · US-50 Supervision · US-44 Coffre de secrets* | US-74 Scénario cloud · US-61 PCA/PRA · US-71 Questionnaire fournisseur* |
-| R4 | **Coordination** · US-75 Rennes et pics · US-77 Recommandation | US-76 Impacts et risques des scénarios · US-62 Fiche rançongiciel* | US-23 Gabarit de site Rennes · US-52 Cas de détection* | US-78 Dossier technique · US-79 Restitution |
+| R3 | US-32 Copie externalisée · US-73 Scénario sur site | **Coordination** · US-14 Atelier 5 · US-60 Simulation d'incident | US-22 Haute disponibilité · US-50 Supervision | US-74 Scénario cloud · US-61 PCA/PRA · US-71 Questionnaire fournisseur* |
+| R4 | **Coordination** · US-75 Rennes et pics · US-77 Recommandation | US-76 Impacts et risques des scénarios | Appui à la démo finale et au dossier technique | US-78 Dossier technique · US-79 Restitution |
 
 **Règles d'équipe :**
 
@@ -144,20 +144,21 @@ Le parcours cartographié est celui de KerLogis (dirigeant + équipe informatiqu
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | **R1 – MVP** (S3–S4) | US-10 Atelier 1 · US-11 Atelier 2 | US-20 Lab Proxmox · US-21 WMS migré sur Proxmox | US-30 Sauvegarde nocturne automatisée (PBS) | US-40 Comptes admin nominatifs + MFA | (notification d'échec de sauvegarde suffisante en R1) | US-31 Restauration testée et chronométrée | US-70 Dossier de preuves v1 |
 | **R2 – Risques et sécurité** (S5–S6) | US-12 Atelier 3 · US-13 Atelier 4 + cartographie des risques | US-24 Portail client en DMZ derrière reverse proxy | US-33 Sauvegarde des autres services | US-41 Segmentation VLAN + OPNsense · US-42 Réseau scanners · US-43 Droits par groupe · US-45 MFA messagerie | – | – | US-72 Inventaire et données de coûts |
-| **R3 – Résilience et visibilité** (S7–S8) | US-14 Atelier 5 : plan de traitement | US-22 Haute disponibilité du WMS | US-32 Copie externalisée protégée | US-44 Coffre de secrets | US-50 Supervision et alertes · US-51 Journalisation centralisée | US-60 Simulation d'incident · US-61 PCA/PRA | US-73 Scénario sur site · US-74 Scénario cloud · US-71 Questionnaire fournisseur |
-| **R4 – Expertise et finalisation** (S9–S10) | – | US-23 Gabarit de site Rennes (VPN inter-sites) | – | – | US-52 Cas de détection EBIOS* | US-62 Fiche réflexe rançongiciel* | US-75 Rennes et pics · US-76 Impacts et risques · US-77 Recommandation · US-78 Dossier technique · US-79 Restitution |
+| **R3 – Résilience et visibilité** (S7–S8) | US-14 Atelier 5 : plan de traitement | US-22 Haute disponibilité du WMS | US-32 Copie externalisée protégée | – | US-50 Supervision et alertes | US-60 Simulation d'incident · US-61 PCA/PRA | US-73 Scénario sur site · US-74 Scénario cloud · US-71 Questionnaire fournisseur |
+| **R4 – Expertise et finalisation** (S9–S10) | – | – | – | – | – | – | US-75 Rennes et pics · US-76 Impacts et risques · US-77 Recommandation · US-78 Dossier technique · US-79 Restitution |
 
 **Pourquoi ces lignes :**
 
 - R1 couvre toutes les activités nécessaires pour répondre à la peur n°1 (« retrouver mes données ») sur le service le plus critique, avec une sécurité minimale non négociable (MFA admin).
 - R2 traite le réseau à plat et les services exposés, que les ateliers 3 et 4 devraient classer parmi les scénarios les plus vraisemblables.
 - R3 apporte la visibilité et la preuve chiffrée de reprise ; c'est aussi là que l'étude PilPro dispose des données techniques pour chiffrer les deux scénarios.
-- R4 est consacrée à l'expertise PilPro et à la consolidation ; les stories « si capacité » sont les premières sacrifiées.
+- R4 est consacrée à l'expertise PilPro et à la consolidation.
+- Les stories qui relèvent des études Cyber ou DevCloud (annuaire et MFA centralisés, VPN inter-sites, journalisation avec cas de détection, coffre de secrets, plan de réponse à incident, IaC) sont hors périmètre du parcours PilPro et ne figurent pas au backlog. Le coût du site de Rennes est traité dans l'étude financière (US-75).
 - Les stories de pilotage (US-01 à US-05) ne figurent pas sur la carte : elles ne font pas partie du parcours client.
 
 ## 4. Product Backlog, Definition of Ready et Definition of Done
 
-Le backlog complet (41 stories ordonnées, critères d'acceptation « Étant donné / Quand / Alors », classe de service, MoSCoW, taille, dépendances, responsable et relecteur) est dans [`backlog/backlog_v0.csv`](../../backlog/backlog_v0.csv), versionné à chaque release. Le rang est proposé par l'équipe et décidé par le PO.
+Le backlog complet (36 stories ordonnées, critères d'acceptation « Étant donné / Quand / Alors », classe de service, MoSCoW, taille, dépendances, responsable et relecteur) est dans [`backlog/backlog_v0.csv`](../../backlog/backlog_v0.csv), versionné à chaque release. Le rang est proposé par l'équipe et décidé par le PO.
 
 ### Règles d'ordonnancement
 
@@ -249,8 +250,8 @@ Cinq releases de deux semaines, chacune close par une démo client ; le MVP est 
 | R0 – Cadrage (S1–S2) | Le PO valide notre compréhension, le MVP et le plan. | US-01 à US-05 | Story map, backlog et plan ; validation par mail |
 | R1 – Socle MVP (S3–S4) | Le WMS tourne sur Proxmox, est sauvegardé chaque nuit et sa restauration est prouvée. | US-20, 40, 21, 30, 31, 10, 11, 70 | Suppression puis restauration en direct de la VM WMS ; ateliers 1 et 2 |
 | R2 – Risques et sécurité (S5–S6) | Le réseau est cloisonné et chaque mesure est reliée à un scénario de risque. | US-41, 42, 24, 43, 12, 13, 33, 72 (+45) | Un poste invité ne voit plus les serveurs ; un scanner n'atteint que le WMS ; cartographie des risques |
-| R3 – Résilience et visibilité (S7–S8) | Une panne est détectée, rétablie et mesurée ; les deux scénarios financiers sont chiffrés. | US-50, 51, 22, 32, 14, 60, 61, 73, 74 (+44, 71) | Arrêt brutal d'un nœud : alerte, bascule, RTO/RPO mesurés ; plan de traitement |
-| R4 – Expertise et finalisation (S9–S10) | La direction reçoit une recommandation argumentée et un dossier complet. | US-75, 76, 77, 23, 78, 79 (+52, 62) | Restitution finale |
+| R3 – Résilience et visibilité (S7–S8) | Une panne est détectée, rétablie et mesurée ; les deux scénarios financiers sont chiffrés. | US-50, 22, 32, 14, 60, 61, 73, 74 (+71) | Arrêt brutal d'un nœud : alerte, bascule, RTO/RPO mesurés ; plan de traitement |
+| R4 – Expertise et finalisation (S9–S10) | La direction reçoit une recommandation argumentée et un dossier complet. | US-75, 76, 77, 78, 79 | Restitution finale |
 
 ### Capacité et lissage
 
