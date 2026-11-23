@@ -10,3 +10,4 @@ Décisions importantes et arbitrages de l'équipe. Une ligne par décision, la p
 | 23/11 | Yolan, Melvin, Elouan, Benjamin | MFA admin incluse dans le MVP | Un MVP doit rester sûr ; exigence probable de l'assureur |
 | 23/11 | Yolan, Melvin, Elouan, Benjamin | Collecte des données de coûts dès R2 (et non R4) | L'étude financière est le cœur du parcours PilPro et dépend des réponses du PO |
 | 23/11 | Yolan, Melvin, Elouan, Benjamin | Le test de restauration (US-31) est fait par Benjamin, pas par Elouan | Prouver que la procédure marche sans celui qui a monté la plateforme |
+| 23/11 | Yolan | Retrait de US-23, US-44, US-51, US-52 et US-62 du backlog (issues fermées, non prévues) | Relèvent de l'étude complémentaire Cyber, hors périmètre PilPro ; temps réaffecté à l'étude financière |
