@@ -433,22 +433,6 @@
  },
  {
   "Rang": 28,
-  "ID": "US-51",
-  "Activité": "A5 Surveiller et détecter",
-  "Release": "R3",
-  "Titre": "Journalisation centralisée",
-  "User story": "En tant que dirigeant, je veux que les événements de sécurité soient centralisés et conservés afin de savoir ce qui s'est passé en cas d'attaque.",
-  "Critères d'acceptation": "Étant donné 5 échecs de connexion admin, quand je consulte la console de journaux, alors les événements sont visibles et horodatés avec la source. / La durée de conservation validée par le PO est appliquée.",
-  "Classe": "Standard",
-  "Domaine": "infrastructure",
-  "MoSCoW": "Should",
-  "Taille": "M",
-  "Dépend de": "US-50",
-  "Responsable": "Melvin",
-  "Relecteur": "Elouan"
- },
- {
-  "Rang": 29,
   "ID": "US-61",
   "Activité": "A6 Reprendre après incident",
   "Release": "R3",
@@ -464,7 +448,7 @@
   "Relecteur": "Melvin"
  },
  {
-  "Rang": 30,
+  "Rang": 29,
   "ID": "US-73",
   "Activité": "A7 Prouver et décider",
   "Release": "R3",
@@ -480,7 +464,7 @@
   "Relecteur": "Benjamin"
  },
  {
-  "Rang": 31,
+  "Rang": 30,
   "ID": "US-74",
   "Activité": "A7 Prouver et décider",
   "Release": "R3",
@@ -496,23 +480,7 @@
   "Relecteur": "Yolan"
  },
  {
-  "Rang": 32,
-  "ID": "US-44",
-  "Activité": "A4 Contrôler les accès",
-  "Release": "R3",
-  "Titre": "Coffre de secrets",
-  "User story": "En tant qu'administrateur, je veux stocker les mots de passe d'administration et de l'EDI dans un coffre partagé afin de supprimer le fichier texte et les mots de passe en clair.",
-  "Critères d'acceptation": "Étant donné le coffre (Vaultwarden ou Passbolt), quand le prestataire a besoin d'un secret, alors il y accède avec son compte nominatif et l'accès est journalisé. / Aucun mot de passe n'apparaît en clair dans les scripts EDI de la maquette.",
-  "Classe": "Standard",
-  "Domaine": "infrastructure",
-  "MoSCoW": "Could",
-  "Taille": "M",
-  "Dépend de": "US-40",
-  "Responsable": "Elouan",
-  "Relecteur": "Yolan"
- },
- {
-  "Rang": 33,
+  "Rang": 31,
   "ID": "US-71",
   "Activité": "A7 Prouver et décider",
   "Release": "R3",
@@ -528,7 +496,7 @@
   "Relecteur": "Melvin"
  },
  {
-  "Rang": 34,
+  "Rang": 32,
   "ID": "US-75",
   "Activité": "A7 Prouver et décider",
   "Release": "R4",
@@ -544,7 +512,7 @@
   "Relecteur": "Benjamin"
  },
  {
-  "Rang": 35,
+  "Rang": 33,
   "ID": "US-76",
   "Activité": "A7 Prouver et décider",
   "Release": "R4",
@@ -560,7 +528,7 @@
   "Relecteur": "Yolan"
  },
  {
-  "Rang": 36,
+  "Rang": 34,
   "ID": "US-77",
   "Activité": "A7 Prouver et décider",
   "Release": "R4",
@@ -576,23 +544,7 @@
   "Relecteur": "Melvin"
  },
  {
-  "Rang": 37,
-  "ID": "US-23",
-  "Activité": "A2 Héberger les services",
-  "Release": "R4",
-  "Titre": "Gabarit de site pour Rennes",
-  "User story": "En tant que dirigeant, je veux qu'un nouveau site soit raccordé selon un modèle documenté afin d'ouvrir Rennes sans repartir de zéro.",
-  "Critères d'acceptation": "Étant donné le gabarit (VLAN, VPN WireGuard, sauvegarde), quand on simule un 2e site en lab, alors il joint le WMS de Brest par le VPN. / Le coût d'un site supplémentaire est chiffré et repris dans l'étude PilPro.",
-  "Classe": "Standard",
-  "Domaine": "infrastructure",
-  "MoSCoW": "Should",
-  "Taille": "M",
-  "Dépend de": "US-41",
-  "Responsable": "Elouan",
-  "Relecteur": "Yolan"
- },
- {
-  "Rang": 38,
+  "Rang": 35,
   "ID": "US-78",
   "Activité": "A7 Prouver et décider",
   "Release": "R4",
@@ -608,7 +560,7 @@
   "Relecteur": "Elouan"
  },
  {
-  "Rang": 39,
+  "Rang": 36,
   "ID": "US-79",
   "Activité": "A7 Prouver et décider",
   "Release": "R4",
@@ -622,37 +574,5 @@
   "Dépend de": "US-77,US-78",
   "Responsable": "Benjamin",
   "Relecteur": "Yolan"
- },
- {
-  "Rang": 40,
-  "ID": "US-52",
-  "Activité": "A5 Surveiller et détecter",
-  "Release": "R4",
-  "Titre": "Cas de détection liés aux scénarios EBIOS",
-  "User story": "En tant qu'administrateur, je veux des règles de détection correspondant aux scénarios opérationnels prioritaires afin d'être alerté sur les attaques les plus vraisemblables.",
-  "Critères d'acceptation": "Étant donné un scénario opérationnel retenu, quand on rejoue son mode opératoire en lab, alors une alerte est levée. / Au moins 2 cas sont démontrés.",
-  "Classe": "Intangible",
-  "Domaine": "infrastructure",
-  "MoSCoW": "Could",
-  "Taille": "M",
-  "Dépend de": "US-51",
-  "Responsable": "Elouan",
-  "Relecteur": "Melvin"
- },
- {
-  "Rang": 41,
-  "ID": "US-62",
-  "Activité": "A6 Reprendre après incident",
-  "Release": "R4",
-  "Titre": "Fiche réflexe rançongiciel",
-  "User story": "En tant qu'administrateur, je veux une fiche réflexe en cas de rançongiciel afin de savoir quoi faire dans la première heure.",
-  "Critères d'acceptation": "Étant donné la fiche, quand on déroule un mini-exercice sur table, alors chaque étape a un responsable et un contact. / La fiche tient sur une page.",
-  "Classe": "Intangible",
-  "Domaine": "documentation",
-  "MoSCoW": "Could",
-  "Taille": "S",
-  "Dépend de": "US-61",
-  "Responsable": "Melvin",
-  "Relecteur": "Benjamin"
  }
 ]
