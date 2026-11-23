@@ -1,0 +1,112 @@
+SAE 502 - KerLogis - Questions à poser au PO / à l'enseignant
+Équipe : Yolan, Melvin, Elouan, Benjamin - Parcours PilPro
+Version du 23/11/2026
+
+Cocher [x] quand la réponse est obtenue, puis la noter dans le compte rendu
+(gestion-projet/comptes-rendus/) et mettre à jour le backlog si besoin.
+
+
+=====================================================================
+A. QUESTIONS AU PO EN TANT QUE CLIENT KERLOGIS (interview de cadrage)
+=====================================================================
+
+Budget et décision
+[ ] 1. Quelle enveloppe d'investissement est envisageable ? Et quel coût annuel
+       (maintenance, abonnements, cloud) est acceptable ?
+[ ] 2. Qui décide de l'investissement : le dirigeant seul, des associés, la banque ?
+[ ] 3. Combien coûte une heure d'arrêt du WMS en haute saison (commandes perdues,
+       pénalités clients, heures supplémentaires) ?
+
+Criticité des services (pour fixer RTO / RPO)
+[ ] 4. Quels services ne doivent jamais s'arrêter en haute saison ?
+       (WMS, EDI, portail client, messagerie, fichiers...)
+[ ] 5. Pour chacun : combien d'heures d'arrêt sont tolérables ?
+[ ] 6. Pour chacun : combien de données peut-on perdre (1 h, 1 journée...) ?
+[ ] 7. Le WMS (Odoo 12 / PostgreSQL 10) est-il bien le service le plus critique ?
+       (hypothèse H2, service pilote de notre MVP)
+
+Preuves et échéance
+[ ] 8. Pouvez-vous nous transmettre le questionnaire fournisseur du client grand compte ?
+[ ] 9. Quelles sont les exigences précises de votre assureur cyber
+       (MFA, sauvegardes hors ligne, plan de réponse, journalisation...) ?
+[ ] 10. Quelle est la date exacte de l'échéance « fin du semestre » ?
+        Coïncide-t-elle avec notre restitution finale ? (hypothèse H3)
+
+Historique
+[ ] 11. Avez-vous déjà subi des pannes ou des attaques ? Durée, coût, cause ?
+[ ] 12. La dernière restauration de sauvegarde a-t-elle déjà été testée ? Quand ?
+
+Site de Rennes
+[ ] 13. Date d'ouverture prévue ?
+[ ] 14. Combien de postes, de scanners, d'utilisateurs ?
+[ ] 15. Quelle liaison Internet est prévue ? Le site aura-t-il un serveur local ?
+
+Haute saison
+[ ] 16. Volume de commandes et nombre d'utilisateurs en novembre-janvier,
+        comparé au reste de l'année ?
+[ ] 17. Recrutez-vous des intérimaires en haute saison (comptes à créer / supprimer) ?
+
+Accès et comptes
+[ ] 18. Quels profils utilisent quels services ?
+[ ] 19. Les scanners peuvent-ils fonctionner avec un compte individuel par préparateur ?
+[ ] 20. Le prestataire informatique externe : quel contrat, quels accès,
+        accepterait-il un compte nominatif avec MFA ?
+[ ] 21. Qui a aujourd'hui le mot de passe administrateur et le fichier texte des mots de passe ?
+
+Données personnelles (RGPD)
+[ ] 22. La géolocalisation continue des chauffeurs est-elle déclarée dans le registre RGPD ?
+        Les salariés en sont-ils informés ?
+[ ] 23. Qui est le référent RGPD / DPO de KerLogis ?
+
+Locaux et infrastructure
+[ ] 24. Y a-t-il une salle serveur, un onduleur, une climatisation à Brest ?
+[ ] 25. Quel débit Internet à Brest et à Lorient ? Y a-t-il un lien de secours ?
+[ ] 26. Le site de Lorient pourrait-il héberger une copie des sauvegardes ?
+
+Préférences et contraintes
+[ ] 27. Le grand compte impose-t-il un hébergeur ou une contrainte de souveraineté
+        (données en France / UE, SecNumCloud...) ?
+[ ] 28. Avez-vous une préférence ou une réticence pour le cloud public ?
+[ ] 29. Combien de temps faut-il conserver les journaux en cas d'incident ?
+[ ] 30. Qui doit être alerté en cas de panne, y compris la nuit ?
+
+Validation de nos hypothèses (dossier de cadrage, section 1)
+[ ] 31. H1 : la maquette se fait sur un lab, sans toucher à la production. OK ?
+[ ] 32. H4 : on privilégie l'open source (Proxmox, PBS, OPNsense, Zabbix/Wazuh). OK ?
+[ ] 33. H5 : l'application de tournées SaaS et la messagerie restent chez leurs éditeurs. OK ?
+[ ] 34. Le périmètre et le hors-périmètre proposés vous conviennent-ils ?
+[ ] 35. Le MVP proposé pour la R1 (WMS sur Proxmox + MFA admin + sauvegarde nocturne
+        + restauration testée + ateliers EBIOS 1 et 2) vous convient-il ?
+
+
+=====================================================================
+B. QUESTIONS À L'ENSEIGNANT (organisation de la SAE)
+=====================================================================
+
+Calendrier et rituels
+[ ] 36. Quelle est la semaine S1 officielle ? (nous avons supposé la semaine du 23/11)
+[ ] 37. Quelles sont les dates exactes des 5 revues de release et de la restitution finale ?
+[ ] 38. Sur quels créneaux de l'emploi du temps se font les points quotidiens avec le PO ?
+[ ] 39. Faut-il une revue ou un point pendant les vacances de Noël ?
+[ ] 40. Le calendrier d'alternance est-il le même pour les quatre membres ?
+
+Ressources techniques
+[ ] 41. Quelles ressources de lab pouvons-nous obtenir (nombre de VM, vCPU, RAM, disque) ?
+[ ] 42. La virtualisation imbriquée (Proxmox dans une VM) est-elle possible ?
+[ ] 43. Pouvons-nous avoir plusieurs nœuds pour tester un cluster / la haute disponibilité ?
+[ ] 44. Quel accès réseau (VLAN isolé, sortie Internet, accès distant / VPN) ?
+[ ] 45. Sous quel délai les ressources sont-elles disponibles après la demande ?
+
+Livrables et évaluation
+[ ] 46. Y a-t-il un modèle imposé pour les livrables EBIOS (tableurs, échelles de gravité
+        et de vraisemblance) ?
+[ ] 47. Où et sous quel format rendre les livrables (dépôt GitHub, Moodle, PDF) ?
+[ ] 48. Quel est le niveau de détail attendu pour l'étude financière PilPro
+        (TCO sur combien d'années, nombre de fournisseurs cloud à comparer) ?
+[ ] 49. Comment est évaluée la part individuelle (historique du tableau, commits, oral) ?
+[ ] 50. Les diapositives de revue doivent-elles suivre un format particulier ?
+
+Outils
+[ ] 51. Quel est votre nom d'utilisateur GitHub, pour vous donner l'accès en lecture
+        au tableau Kanban (projet privé) ?
+[ ] 52. Préférez-vous être contacté par mail ou par un autre canal ?
